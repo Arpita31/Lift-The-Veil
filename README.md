@@ -30,7 +30,34 @@ pipenv run pytest test_unredactor.py -v
 
 # Sample Output
 ```
-![Unredactor Output](images/Output.png "Unredactor Output Example")
+=== Movie Review Unredactor ===
+
+Loaded 200 training examples.
+
+Training Random Forest...
+
+Validation Accuracy for Random Forest: 17.50%
+
+Classification Report:
+               precision    recall  f1-score   support
+
+Alice Johnson       0.00      0.00      0.00         4
+    Bob Brown       0.20      0.33      0.25         3
+Charlie White       0.00      0.00      0.00         3
+  Diana Black       0.00      0.00      0.00         4
+ Edward Green       1.00      0.20      0.33        10
+   Fiona Grey       0.00      0.00      0.00         3
+   Jane Smith       0.25      0.33      0.29         6
+     John Doe       0.13      0.29      0.18         7
+
+     accuracy                           0.17        40
+    macro avg       0.20      0.14      0.13        40
+ weighted avg       0.33      0.17      0.18        40
+
+Loaded 200 test examples.
+
+Generating submission file...
+Submission file saved as submission.tsv
 ```
 
 # Functions
