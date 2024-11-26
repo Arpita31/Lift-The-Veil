@@ -25,7 +25,7 @@ pipenv run python unredactor.py
 
 To run the tests:
 ```bash
-pipenv run pytest test_unredactor.py -v
+pipenv run pytest test/test_random.py -v
 ```
 
 # Sample Output
