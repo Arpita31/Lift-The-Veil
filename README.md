@@ -8,7 +8,7 @@ This project implements a machine learning-based unredactor system for movie rev
 # How to Install
 ```bash
 # Create and activate virtual environment
-pipenv install
+pipenv install -e .
 
 # Install required packages
 pipenv install pandas numpy scikit-learn nltk
@@ -30,7 +30,7 @@ pipenv run pytest test_unredactor.py -v
 
 # Sample Output
 ```
-![Unredactor Output](docs/Output.png "Unredactor Output Example")
+![Unredactor Output](images/Output.png "Unredactor Output Example")
 ```
 
 # Functions
