@@ -169,8 +169,6 @@ The unredactor system follows this pipeline:
      - id (from test data)
      - name (predicted name)
 
-[Rest of the README remains the same]
-
 # Pipeline Workflow Example:
 ```python
 # 1. Load Data
@@ -188,6 +186,4 @@ accuracy = model.evaluate(val_data)
 test_df = load_test_data('test.tsv')
 generate_submission(model, test_df, 'submission.tsv')
 ```
-
-[Previous sections about Bugs and Assumptions remain the same]
 
