@@ -121,3 +121,73 @@ Submission file saved as submission.tsv
    - Model training
    - Prediction generation
 
+[Previous sections remain the same until Functions]
+
+# Pipeline Instructions
+
+The unredactor system follows this pipeline:
+
+1. **Data Loading and Preprocessing**:
+   - Training data is loaded from 'unredactor.tsv' with three columns:
+     - split (train/test designation)
+     - name (actual name that was redacted)
+     - context (text with redacted names marked by █)
+   - Test data is loaded from 'test.tsv' with two columns:
+     - id (unique identifier)
+     - context (text with redacted names)
+
+2. **Feature Extraction**:
+   The system extracts the following features from each context:
+   - context_length: Total length of the text
+   - context_word_count: Number of words
+   - has_question_mark: Presence of question marks
+   - has_exclamation: Presence of exclamation marks
+   - starts_with_capital: Whether first word is capitalized
+   - capital_word_ratio: Proportion of capitalized words
+   - redacted_symbol_count: Number of █ symbols
+   - average_word_length: Mean length of words
+
+3. **Model Training**:
+   - Data is split into training (80%) and validation (20%) sets
+   - Features are vectorized using DictVectorizer
+   - Names are encoded using LabelEncoder
+   - Random Forest classifier is trained with parameters:
+     - n_estimators=100
+     - max_depth=10
+     - random_state=42
+
+4. **Model Evaluation**:
+   - Model is evaluated on validation set
+   - Metrics reported include:
+     - Overall accuracy
+     - Per-class precision, recall, f1-score
+     - Support for each class
+
+5. **Prediction Generation**:
+   - Model makes predictions on test data
+   - Predictions are saved in TSV format with columns:
+     - id (from test data)
+     - name (predicted name)
+
+[Rest of the README remains the same]
+
+# Pipeline Workflow Example:
+```python
+# 1. Load Data
+train_df = load_training_data('unredactor.tsv')
+train_data, val_data = train_test_split(train_df, test_size=0.2)
+
+# 2. Initialize and Train Model
+model = RandomForestUnredactor()
+model.fit(train_data)
+
+# 3. Evaluate Performance
+accuracy = model.evaluate(val_data)
+
+# 4. Generate Predictions
+test_df = load_test_data('test.tsv')
+generate_submission(model, test_df, 'submission.tsv')
+```
+
+[Previous sections about Bugs and Assumptions remain the same]
+
