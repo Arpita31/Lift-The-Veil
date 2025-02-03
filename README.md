@@ -1,6 +1,7 @@
-# cis6930fa24 -- Project 2
+# Unredactor
 
 Name: Arpita Patnaik
+cis6930fa24 -- Project 2
 
 # Project Description
 This project implements a machine learning-based unredactor system for movie reviews. The system uses a Random Forest classifier to predict redacted names in movie reviews based on contextual features. Find the detailed project description on [https://ufdatastudio.com/cis6930fa24/assignments/project2].
