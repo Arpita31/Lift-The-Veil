@@ -1,4 +1,4 @@
-# Unredactor
+# Lift The Veil
 
 Name: Arpita Patnaik
 <br>cis6930fa24 -- Project 2
